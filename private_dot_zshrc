@@ -156,6 +156,7 @@ alias dwa='docker system prune -af && docker image prune -af && docker volume pr
 alias gac='git add . && git commit -m'
 alias gs='git status'
 alias gpo='git push -u origin'
+alias ytdl='youtube-dl'
 
 # Local configs
 if [ -f ~/.local_configs ]; then
@@ -168,3 +169,10 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
